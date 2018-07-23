@@ -1,0 +1,12 @@
+.container{
+    max-width: 1300px;
+}
+
+.card{
+    text-align: center;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    -webkit-box-shadow: 1px 0px 4px 1px rgba(222,219,222,1);
+-moz-box-shadow: 1px 0px 4px 1px rgba(222,219,222,1);
+box-shadow: 1px 0px 4px 1px rgba(222,219,222,1);
+}
