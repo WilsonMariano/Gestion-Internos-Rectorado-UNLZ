@@ -9,6 +9,9 @@ import { HttpService } from '../../services/http.service';
 export class PrincipalComponent implements OnInit {
 
   public arrInternos = [];
+  public arrAuxiliar = [];
+  public criterioBusqueda = "nombre"
+  public cadenaBuscar = "";
 
   constructor(
     private httpService: HttpService
@@ -23,9 +26,45 @@ export class PrincipalComponent implements OnInit {
     this.httpService.traerTodo('interno').subscribe(
       data => {
         this.arrInternos = data;
-        console.log(data);
+        this.arrAuxiliar = data;
       }
     )
   }
+
+  public onKeyPress()
+  {
+    this.arrAuxiliar = [];
+
+    switch(this.criterioBusqueda)
+    {
+      case 'nombre':
+        this.arrInternos.forEach(element => {
+          if(
+              (<string>element['nombreInt']).toLowerCase().includes(this.cadenaBuscar.toLowerCase()) || 
+              (<string>element['apellidoInt']).toLowerCase().includes(this.cadenaBuscar.toLowerCase())
+          )
+          this.arrAuxiliar.push(element); 
+        });
+      break;
+      case 'oficina':
+        this.arrInternos.forEach(element => {
+          if(
+              (<string>element['nombreOf']).toLowerCase().includes(this.cadenaBuscar.toLowerCase())
+          )
+          this.arrAuxiliar.push(element); 
+        });
+      break;
+      case 'piso':
+      this.arrInternos.forEach(element => {
+        if(
+            (<string>element['pisoOf']).toLowerCase().includes(this.cadenaBuscar.toLowerCase())
+        )
+        this.arrAuxiliar.push(element); 
+      });
+    break;
+
+    }
+  }
+    
 
 }

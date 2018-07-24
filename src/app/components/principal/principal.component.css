@@ -17,6 +17,7 @@ h2{
     font-size: 2.1rem;
     /* font-family: inherit; */
     font-weight: bold;
+    text-shadow: 4px 4px #000;
 }
 
 .container{
@@ -27,9 +28,12 @@ h2{
     text-align: center;
     margin-top: 1rem;
     margin-right: 1rem;
-    background: #fdfbfb;
+    background: #f1f1f1;
     width: 15rem;
-    -webkit-box-shadow: 1px 0px 4px 1px rgba(222,219,222,1);
+    /* -webkit-box-shadow: 1px 0px 4px 1px rgba(222,219,222,1);
     -moz-box-shadow: 1px 0px 4px 1px rgba(222,219,222,1);
-    box-shadow: 1px 0px 4px 1px rgba(222,219,222,1);
+    box-shadow: 1px 0px 4px 1px rgba(222,219,222,1); */
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.5);
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.5);
 }

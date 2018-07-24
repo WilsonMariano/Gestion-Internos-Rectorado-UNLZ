@@ -1,9 +1,9 @@
 <!-- Buscador -->
 <div class="row align-items-center text-center bg">
-    <div class="col-md-4 col-sm-12 offset-sm-4">
+    <div class="col-md-5 col-sm-12 offset-sm-4">
       <h2 class="text-center mb-5">¿A quién querés llamar?</h2>
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Comience a escribir un nombre, apellido, oficina o piso...">
+        <input type="text" class="form-control" placeholder="Comience a escribir un nombre, apellido, oficina o piso..." [(ngModel)]="cadenaBuscar" (keyup)="onKeyPress()">
         <div class="input-group-prepend">
           <div class="input-group-text" id="btnGroupAddon2">
             <i class="fas fa-search"></i>
@@ -11,15 +11,15 @@
         </div>
       </div>
       <div class="form-check form-check-inline mt-3">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked>
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" [(ngModel)]="criterioBusqueda" value="nombre">
         <label class="form-check-label" for="inlineRadio1">Nombre y apellido</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" [(ngModel)]="criterioBusqueda" value="oficina">
         <label class="form-check-label" for="inlineRadio2">Oficina</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" [(ngModel)]="criterioBusqueda" value="piso">
         <label class="form-check-label" for="inlineRadio3">Piso</label>
       </div>
     </div>
@@ -28,8 +28,12 @@
 <!-- Tarjetas -->
 <div class="container">
   <div class="row mt-3">
+    <div class="col-12 text-center mt-5" *ngIf="arrInternos.length == 0">
+      <i class="fas fa-spinner fa-spin fa-3x"></i>
+      <p class="text-muted">Cargando...</p>
+    </div>
 
-    <div class="card" *ngFor="let int of arrInternos">
+    <div class="card" *ngFor="let int of arrAuxiliar">
       <div class="card-body">
         <h5 class="card-title">{{int.apellidoInt +' '+ int.nombreInt}}</h5>
         <h6 class="card-subtitle mb-4 text-muted">{{int.nombreOf}}</h6>
