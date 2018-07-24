@@ -58,7 +58,7 @@ export class ModalInternoComponent implements OnInit {
       })
       .subscribe(
         data=>{
-          console.log(data);
+          this.forma.reset();
           $('#modalInterno').modal('hide');
           swal("¡Perfecto!", "Interno agregado con éxito", "success");
           this.onSuccess.emit();
@@ -80,13 +80,13 @@ export class ModalInternoComponent implements OnInit {
         })
         .subscribe(
           data=>{
-            console.log(data);
+            this.forma.reset();
             $('#modalInterno').modal('hide');
             swal("¡Perfecto!", "Interno editado con éxito", "success");
             this.onSuccess.emit();
           }
         );
-      }
+      } 
     }
   }
 

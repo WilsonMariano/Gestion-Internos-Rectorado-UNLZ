@@ -19,7 +19,7 @@ export class ModalOficinaComponent implements OnInit {
   public forma = new FormGroup({
     'nombreOf': new FormControl('', Validators.required),
     'pisoOf': new FormControl('', Validators.required),
-    'telefonoOf': new FormControl('', Validators.required),
+    'telefonoOf': new FormControl(''),
   })
 
   public arrPisos = ['Subsuelo', 'Planta baja', 'Primero', 'Segundo'];
