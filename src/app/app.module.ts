@@ -10,17 +10,21 @@ import { HttpService } from './services/http.service';
 
 import { AppComponent } from './app.component';
 import { NabvarComponent } from './components/nabvar/nabvar.component';
-import { InternosComponent } from './components/internos/internos.component';
+import { PrincipalComponent } from './components/principal/principal.component';
 import { OficinasComponent } from './components/oficinas/oficinas.component';
 import { ModalOficinaComponent } from './components/modal-oficina/modal-oficina.component';
+import { InternosComponent } from './components/internos/internos.component';
+import { ModalInternoComponent } from './components/modal-interno/modal-interno.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NabvarComponent,
-    InternosComponent,
+    PrincipalComponent,
     OficinasComponent,
-    ModalOficinaComponent
+    ModalOficinaComponent,
+    InternosComponent,
+    ModalInternoComponent
   ],
   imports: [
     BrowserModule,

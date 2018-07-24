@@ -1,0 +1,37 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" id="modalInterno" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{title}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form [formGroup]="forma" (ngSubmit)="onSubmit()">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="apellido" class="col-form-label">Apellido</label>
+            <input type="text" class="form-control" id="apellido" placeholder="Ingrese apellido" formControlName="apellidoInt">
+            <span class="invalid" *ngIf="forma.get('apellidoInt').errors?.required && forma.get('apellidoInt').touched">*El campo es requerido</span>
+          </div>
+          <div class="form-group">
+            <label for="nombre" class="col-form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" placeholder="Ingrese nombre" formControlName="nombreInt">
+            <span class="invalid" *ngIf="forma.get('nombreInt').errors?.required && forma.get('nombreInt').touched">*El campo es requerido</span>
+          </div>
+          <div class="form-group">
+            <label for="numero" class="col-form-label">Número de interno</label>
+            <input type="number" class="form-control" id="numero" placeholder="Ingrese número de interno" formControlName="numeroInt">
+            <span class="invalid" *ngIf="forma.get('numeroInt').errors?.required && forma.get('numeroInt').touched">*El campo es requerido</span>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary" [disabled]="forma.invalid">Guardar</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

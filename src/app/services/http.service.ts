@@ -29,6 +29,16 @@ export class HttpService {
     )
   }
 
+  public traerPorId(entidad: string, id: number)
+  {
+    return this.http.get(
+      environment.rutaApi + entidad +'/traer-por-id/'+ id.toString()
+    )
+    .pipe(
+      map(data => data.json())
+    )
+  }
+
   public insertarUno(entidad: string, objeto)
   {
     return this.http.post
@@ -64,4 +74,5 @@ export class HttpService {
       map(data => data.json())
     )
   }
+
 }

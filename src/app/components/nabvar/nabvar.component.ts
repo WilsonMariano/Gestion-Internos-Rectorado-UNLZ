@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nabvar',
@@ -7,14 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NabvarComponent implements OnInit {
 
-  constructor() { }
+  public password: string;
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
-  public login()
+  public ingresar()
   {
-    alert("log");
+    if(this.password == 'valbau2018')
+    {
+      this.router.navigate(['oficinas']);
+    }
   }
 
 }

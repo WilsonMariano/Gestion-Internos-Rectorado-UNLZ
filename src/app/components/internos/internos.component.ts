@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { HttpService } from '../../services/http.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-internos',
@@ -8,24 +10,66 @@ import { HttpService } from '../../services/http.service';
 })
 export class InternosComponent implements OnInit {
 
+  public nombreOf;
+  public pisoOf;
+  public telefonoOf;
+  public idOficina: number;
   public arrInternos = [];
+  public internoEditar = null;
 
   constructor(
-    private httpService: HttpService
+    private activateRoute: ActivatedRoute,
+    private httpService: HttpService,
+    private spinner: NgxSpinnerService
   ) { }
 
   ngOnInit() {
-    this.traerInternos();
+    this.recibirParametro();
   }
 
-  private traerInternos()
+  private recibirParametro()
   {
-    this.httpService.traerTodo('interno').subscribe(
-      data => {
-        this.arrInternos = data;
-        console.log(data);
+    this.activateRoute.params.subscribe(
+      data =>{
+        this.idOficina = data['idOf'];
+        this.traerInternos();
       }
     )
+  }
+
+  public traerInternos()
+  {
+    this.spinner.show();
+    this.httpService.traerPorId('interno', this.idOficina).subscribe(
+      data =>{
+        this.arrInternos = data;
+        console.log(data);
+        this.nombreOf = localStorage.getItem('nombreOf');
+        this.pisoOf = localStorage.getItem('pisoOf');
+        this.telefonoOf = localStorage.getItem('telefonoOf');
+        setTimeout(() => this.spinner.hide(), 500);
+      }
+    )
+  }
+
+  public borrar(interno)
+  {
+    swal({
+      title: "¿Estás seguro...",
+      text: "que deseas eliminar este interno?",
+      icon: "warning",
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        this.httpService.borrarUno('interno', interno.idInt).subscribe(
+          data =>{
+            this.traerInternos();
+            swal("¡Perfecto!", "Oficina borrada con éxito", "success");
+          }
+        );
+      } 
+    });   
   }
 
 }

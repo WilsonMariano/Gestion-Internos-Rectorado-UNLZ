@@ -1,13 +1,14 @@
 import { RouterModule, Routes } from '@angular/router';
-import { InternosComponent } from './components/internos/internos.component';
+import { PrincipalComponent } from './components/principal/principal.component';
 import { OficinasComponent } from './components/oficinas/oficinas.component';
+import { InternosComponent } from './components/internos/internos.component';
  
 
 const APP_ROUTES: Routes = 
 [
     { 
-        path: 'internos', 
-        component: InternosComponent 
+        path: 'principal', 
+        component: PrincipalComponent 
     },
     { 
         path: 'oficinas', 
@@ -15,9 +16,14 @@ const APP_ROUTES: Routes =
 
     },
     { 
+        path: 'internos/:idOf', 
+        component: InternosComponent
+
+    },
+    { 
         path: '**', 
         pathMatch: 'full', 
-        redirectTo: 'internos' 
+        redirectTo: 'principal' 
     },
 ];
 
