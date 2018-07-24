@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  rutaApi: 'http://l9000590.ferozo.com/apiInternos/'
 };

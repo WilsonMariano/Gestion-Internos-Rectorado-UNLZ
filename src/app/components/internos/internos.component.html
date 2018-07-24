@@ -1,82 +1,44 @@
-<div class="container">
-  <div class="row mt-3">
-    <div class="card " style="width: 15rem; background: #fdfbfb">
-      <div class="card-body">
-        <h5 class="card-title">Mariano Wilson</h5>
-        <h6 class="card-subtitle mb-4 text-muted">Tesorería</h6>
-        <p class="mb-1 card-subtitle text-muted">
-          <i class="fas fa-building"></i> 1ro
-        </p>
-        <p class="mb-1">
-          <i class="fas fa-briefcase"></i> 155</p>
-        <p>
-          <i class="fas fa-phone"></i> 42932851</p>
+<!-- Buscador -->
+<div class="row align-items-center text-center bg">
+    <div class="col-4 offset-sm-4">
+      <h2 class="text-center mb-5">¿A quién querés llamar?</h2>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Comience a escribir un nombre, apellido, oficina o piso...">
+        <div class="input-group-prepend">
+          <div class="input-group-text" id="btnGroupAddon2">
+            <i class="fas fa-search"></i>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="card " style="width: 15rem; background: #fdfbfb">
-      <div class="card-body">
-        <h5 class="card-title">Mariano Wilson</h5>
-        <h6 class="card-subtitle mb-4 text-muted">Tesorería</h6>
-        <p class="mb-1 card-subtitle text-muted">
-          <i class="fas fa-building"></i> 1ro
-        </p>
-        <p class="mb-1">
-          <i class="fas fa-briefcase"></i> 155</p>
-        <p>
-          <i class="fas fa-phone"></i> 42932851</p>
+      <div class="form-check form-check-inline mt-3">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked>
+        <label class="form-check-label" for="inlineRadio1">Nombre y apellido</label>
       </div>
-    </div>
-    <div class="card " style="width: 15rem; background: #fdfbfb">
-      <div class="card-body">
-        <h5 class="card-title">Mariano Wilson</h5>
-        <h6 class="card-subtitle mb-4 text-muted">Tesorería</h6>
-        <p class="mb-1 card-subtitle text-muted">
-          <i class="fas fa-building"></i> 1ro
-        </p>
-        <p class="mb-1">
-          <i class="fas fa-briefcase"></i> 155</p>
-        <p>
-          <i class="fas fa-phone"></i> 42932851</p>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+        <label class="form-check-label" for="inlineRadio2">Oficina</label>
       </div>
-    </div>
-    <div class="card " style="width: 15rem; background: #fdfbfb">
-      <div class="card-body">
-        <h5 class="card-title">Mariano Wilson</h5>
-        <h6 class="card-subtitle mb-4 text-muted">Tesorería</h6>
-        <p class="mb-1 card-subtitle text-muted">
-          <i class="fas fa-building"></i> 1ro
-        </p>
-        <p class="mb-1">
-          <i class="fas fa-briefcase"></i> 155</p>
-        <p>
-          <i class="fas fa-phone"></i> 42932851</p>
-      </div>
-    </div>
-    <div class="card " style="width: 15rem; background: #fdfbfb">
-      <div class="card-body">
-        <h5 class="card-title">Mariano Wilson</h5>
-        <h6 class="card-subtitle mb-4 text-muted">Tesorería</h6>
-        <p class="mb-1 card-subtitle text-muted">
-          <i class="fas fa-building"></i> 1ro
-        </p>
-        <p class="mb-1">
-          <i class="fas fa-briefcase"></i> 155</p>
-        <p>
-          <i class="fas fa-phone"></i> 42932851</p>
-      </div>
-    </div>
-    <div class="card " style="width: 15rem; background: #fdfbfb">
-      <div class="card-body">
-        <h5 class="card-title">Mariano Wilson</h5>
-        <h6 class="card-subtitle mb-4 text-muted">Tesorería</h6>
-        <p class="mb-1 card-subtitle text-muted">
-          <i class="fas fa-building"></i> 1ro
-        </p>
-        <p class="mb-1">
-          <i class="fas fa-briefcase"></i> 155</p>
-        <p>
-          <i class="fas fa-phone"></i> 42932851</p>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+        <label class="form-check-label" for="inlineRadio3">Piso</label>
       </div>
     </div>
   </div>
-</div>
+
+<!-- Tarjetas -->
+<div class="container">
+  <div class="row mt-3">
+
+    <div class="card" *ngFor="let int of arrInternos">
+      <div class="card-body">
+        <h5 class="card-title">{{int.apellidoInt +' '+ int.nombreInt}}</h5>
+        <h6 class="card-subtitle mb-4 text-muted">{{int.nombreOf}}</h6>
+        <p class="mb-1 card-subtitle text-muted">
+          <i class="fas fa-building"></i> {{int.pisoOf}}
+        </p>
+        <p class="mb-1">
+          <i class="fas fa-briefcase"></i> {{int.numeroInt}}</p>
+        <p>
+          <i class="fas fa-phone"></i> {{int.telefonoOf}}</p>
+      </div>
+    </div>

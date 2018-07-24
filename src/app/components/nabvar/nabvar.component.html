@@ -10,86 +10,30 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#"><i class="fas fa-download"></i> Descargá tu recibo</a>
+        <a class="nav-link" href="#">
+          <i class="fas fa-download"></i> Descargá tu recibo</a>
       </li>
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li> -->
     </ul>
-    <!-- <form class="form-inline my-2 my-lg-0"> -->
-      <!-- <button class="btn btn-outline-danger  my-2 my-sm-0 dropdown-toggle" data-toggle="dropdown">
-        <i class="fas fa-edit"></i>
-        Editar
-      </button> -->
-
-      <div class="btn-group dropleft">
-          <button class="btn btn-danger" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-edit"></i>
-              Acceder
-          </button>
-        
-          <!-- <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div> -->
-      
-        <div class="dropdown-menu dropleft" aria-labelledby="dropdownMenuLink">
-            <form class="px-4 py-3">
-              <div class="form-group">
-                <label for="exampleDropdownFormEmail1">Usuario</label>
-                <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
-              </div>
-              <div class="form-group">
-                <label for="exampleDropdownFormPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
-              </div>
-              <button type="submit" class="btn btn-primary">Acceder</button>
-            </form>
-         
+    <div class="btn-group dropleft">
+      <button type="button" class="btn btn-outline-success" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-sign-in-alt"></i> Login
+      </button>
+      <div class="dropdown-menu">
+        <form action="">
+          <div class="form-group">
+            <label for="exampleDropdownFormEmail2">Usuario</label>
+            <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com">
           </div>
-        </div>
-    <!-- </form> -->
+          <div class="form-group">
+            <label for="exampleDropdownFormPassword2">Password</label>
+            <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" (click)="login()">Ingresar</button>
+
+        </form>
+      </div>
+    </div>
+
   </div>
 </nav>
 
-<div class="row align-items-center text-center bg">
-  <div class="col-4 offset-sm-4">
-    <h3 class="text-center mb-5">¿A quién querés llamar?</h3>
-    <div class="input-group">
-      <input type="text" class="form-control" placeholder="Escriba nombre, apellido, departamento o piso">
-      <div class="input-group-prepend">
-        <div class="input-group-text" id="btnGroupAddon2">
-          <i class="fas fa-search"></i>
-        </div>
-      </div>
-    </div>
-    <div class="form-check form-check-inline mt-3">
-      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked>
-      <label class="form-check-label" for="inlineRadio1">Nombre y apellido</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-      <label class="form-check-label" for="inlineRadio2">Oficina</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-      <label class="form-check-label" for="inlineRadio3">Piso</label>
-    </div>
-  </div>
-
-</div>

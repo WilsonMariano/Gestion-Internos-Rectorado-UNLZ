@@ -12,4 +12,9 @@ export class NabvarComponent implements OnInit {
   ngOnInit() {
   }
 
+  public login()
+  {
+    alert("log");
+  }
+
 }

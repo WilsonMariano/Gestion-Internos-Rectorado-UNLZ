@@ -24,8 +24,10 @@
     "bootstrap": "^4.1.2",
     "core-js": "^2.5.4",
     "jquery": "^3.3.1",
+    "ngx-spinner": "^6.0.0",
     "popper.js": "^1.14.3",
     "rxjs": "^6.0.0",
+    "sweetalert": "^2.1.0",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
