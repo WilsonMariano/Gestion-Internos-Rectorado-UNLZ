@@ -1,7 +1,43 @@
-/* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css?family=Playball');
+
 h1{
     font-family: 'Playball', cursive !important;
     font-weight: bold !important;
     font-size: 50px !important;
 }
+
+/*QUITO LAS FLECHAS EN LOS INPUT TYPE NUMBER*/
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+/*PAGINADO*/
+.my-pagination ul {
+
+    text-align: center !important;
+} 
+.my-pagination /deep/ .ngx-pagination a {
+
+    display: inline;
+    text-align: -webkit-match-parent;
+    position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #007bff;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+} 
+.my-pagination /deep/ .ngx-pagination .current {
+    
+    padding: .5rem .75rem;
+    background: #2199e8;
+    color: #fefefe;
+    cursor: default;
+}
+/*FIN-PAGINADO*/

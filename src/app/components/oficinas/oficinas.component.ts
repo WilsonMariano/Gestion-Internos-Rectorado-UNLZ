@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../../services/http.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { Router } from '@angular/router';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-oficinas',
@@ -12,6 +13,8 @@ export class OficinasComponent implements OnInit {
 
   public arrOficinas = [];
   public oficinaEditar = null;
+  public p = 1;
+  public cantPagListados = environment.cantPagListados;
 
   constructor(
     private httpService: HttpService,

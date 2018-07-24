@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpService } from '../../services/http.service';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-internos',
@@ -16,6 +17,8 @@ export class InternosComponent implements OnInit {
   public idOficina: number;
   public arrInternos = [];
   public internoEditar = null;
+  public p = 1;
+  public cantPagListados = environment.cantPagListados;
 
   constructor(
     private activateRoute: ActivatedRoute,

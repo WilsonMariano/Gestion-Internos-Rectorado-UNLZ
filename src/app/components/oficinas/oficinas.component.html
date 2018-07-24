@@ -32,7 +32,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let o of arrOficinas">
+          <tr *ngFor="let o of arrOficinas | paginate: { itemsPerPage: cantPagListados, currentPage: p }">
             <td>{{o.idOf}}</td>
             <td>{{o.nombreOf}}</td>
             <td>{{o.pisoOf}}</td>
@@ -55,6 +55,13 @@
           </tr>
         </tbody>
       </table>
+      <pagination-controls 
+      class="my-pagination"
+      (pageChange)="p = $event" 
+      previousLabel="Anterior" 
+      nextLabel="Siguiente"
+      autoHide="true"
+      ></pagination-controls>
     </div>
   </div>
 </div>

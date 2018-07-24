@@ -17,10 +17,10 @@ export class NabvarComponent implements OnInit {
 
   public ingresar()
   {
-    if(this.password == 'valbau2018')
-    {
+    // if(this.password == 'valbau2018')
+    // {
       this.router.navigate(['oficinas']);
-    }
+    // }
   }
 
 }

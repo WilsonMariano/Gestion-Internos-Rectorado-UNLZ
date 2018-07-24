@@ -41,7 +41,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let i of arrInternos; let j = index">
+          <tr *ngFor="let i of arrInternos | paginate: { itemsPerPage: cantPagListados, currentPage: p }; let j = index ">
             <td>{{j}}</td>
             <td>{{i.apellidoInt}}</td>
             <td>{{i.nombreInt}}</td>
@@ -59,6 +59,13 @@
           </tr>
         </tbody>
       </table>
+      <pagination-controls 
+      class="my-pagination"
+      (pageChange)="p = $event" 
+      previousLabel="Anterior" 
+      nextLabel="Siguiente"
+      autoHide="true"
+      ></pagination-controls>
     </div>
   </div>
 </div>

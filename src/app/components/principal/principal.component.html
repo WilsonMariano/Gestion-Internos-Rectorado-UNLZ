@@ -33,7 +33,7 @@
       <p class="text-muted">Cargando...</p>
     </div>
 
-    <div class="card" *ngFor="let int of arrAuxiliar">
+    <div class="card" *ngFor="let int of arrAuxiliar | paginate: { itemsPerPage: cantPagPrincipal, currentPage: p }">
       <div class="card-body">
         <h5 class="card-title">{{int.apellidoInt +' '+ int.nombreInt}}</h5>
         <h6 class="card-subtitle mb-4 text-muted">{{int.nombreOf}}</h6>
@@ -45,4 +45,20 @@
         <p>
           <i class="fas fa-phone"></i> {{int.telefonoOf}}</p>
       </div>
+        
+      </div>
+      <div class="col-12 mt-5">
+        <pagination-controls 
+  class="my-pagination"
+  (pageChange)="p = $event" 
+  previousLabel="Anterior" 
+  nextLabel="Siguiente"
+  autoHide="true"
+  ></pagination-controls>
+      </div>
     </div>
+
+  
+
+ 
+    
