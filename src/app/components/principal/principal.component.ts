@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../../services/http.service';
-import { environment } from '../../../environments/environment'
 
 @Component({
   selector: 'app-principal',
@@ -14,7 +13,7 @@ export class PrincipalComponent implements OnInit {
   public criterioBusqueda = "nombre"
   public cadenaBuscar = "";
   public p: number = 1;
-  public cantPagPrincipal = environment.cantPagPrincipal;
+  public cantPagPrincipal = 15;
 
   constructor(
     private httpService: HttpService
@@ -68,6 +67,5 @@ export class PrincipalComponent implements OnInit {
 
     }
   }
-    
 
 }

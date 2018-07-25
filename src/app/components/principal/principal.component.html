@@ -27,7 +27,12 @@
 
 <!-- Tarjetas -->
 <div class="container">
-  <div class="row mt-3">
+  <div class="row justify-content-center mt-3">
+
+    <div class="col-12 text-right">
+        <span class="badge badge-primary mr-1">Paginado</span> <a href="#" (click)="cantPagPrincipal = 10">10</a>, <a href="#" (click)="cantPagPrincipal = 15">15</a>, <a href="#" (click)="cantPagPrincipal = 20">20</a>, <a href="#" (click)="cantPagPrincipal = 30">30</a>, <a href="#" (click)="cantPagPrincipal = 50">50</a>
+    </div>
+
     <div class="col-12 text-center mt-5" *ngIf="arrInternos.length == 0">
       <i class="fas fa-spinner fa-spin fa-3x"></i>
       <p class="text-muted">Cargando...</p>
