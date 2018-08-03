@@ -10,16 +10,34 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" *ngIf="!authService.isLogued()">
           <i class="fas fa-download"></i> Descargá tu recibo</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['principal']" *ngIf="authService.isLogued()">
+          Principal</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['oficinas']" *ngIf="authService.isLogued()">
+          Edición</a>
+      </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
+    <form class="form-inline my-2 my-lg-0" *ngIf="!authService.isLogued()">
       <input class="form-control mr-sm-1" type="password" placeholder="Ingrese clave" name="password" [(ngModel)]="password">
       <button class="btn btn-success my-2 my-sm-0" (click)="ingresar()">
-          <i class="fas fa-sign-in-alt"></i> 
-        </button>
+        <i class="fas fa-sign-in-alt"></i>
+      </button>
     </form>
+
+    <div class="dropdown show" *ngIf="authService.isLogued()">
+      <a class="dropdown-toggle menu-dropdown" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">
+        <i class="fas fa-user"></i> Administrador
+      </a>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" href="#" (click)="logOut()">Salir</a>
+      </div>
+    </div>
+
   </div>
 </nav>
-
