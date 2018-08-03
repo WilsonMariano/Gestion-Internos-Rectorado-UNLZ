@@ -14,7 +14,7 @@ export class NabvarComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private authService: AuthService) { }
+    public authService: AuthService) { }
 
   ngOnInit() {
   }

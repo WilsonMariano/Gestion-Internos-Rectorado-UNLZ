@@ -20,6 +20,13 @@ h2{
     text-shadow: 4px 4px #000;
 }
 
+#btn-buscar{
+    background: #007bff;
+    width: 2.8rem;
+    border: 0;
+    /* border-radius: 2px; */
+}
+
 .container{
     max-width: 1300px;
 }
@@ -36,4 +43,10 @@ h2{
     -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.5);
     -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.5);
     box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.5);
+}
+
+input[type=text]
+{
+    height: 3rem;
+    border-radius: 0%;
 }
