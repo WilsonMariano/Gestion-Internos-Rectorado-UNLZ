@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #046d8d;">
   <a class="navbar-brand" href="#">
-    <img width="40" src="./assets/img/logo.jpg" alt="" class="img-fluid">
+    <img width="250" src="./assets/img/logo.png" alt="" class="img-fluid">
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
     aria-expanded="false" aria-label="Toggle navigation">
@@ -9,10 +9,10 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" *ngIf="!authService.isLogued()" href="http://172.16.4.9/autogestion">
           <i class="fas fa-download"></i> Descargá tu recibo</a>
-      </li>
+      </li> -->
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['principal']" *ngIf="authService.isLogued()">
           Principal</a>
@@ -22,12 +22,12 @@
           Edición</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0" *ngIf="!authService.isLogued()">
+    <!-- <form class="form-inline my-2 my-lg-0" *ngIf="!authService.isLogued()">
       <input class="form-control mr-sm-1" type="password" placeholder="Ingrese clave" name="password" [(ngModel)]="password">
       <button class="btn btn-success my-2 my-sm-0" (click)="ingresar()">
         <i class="fas fa-sign-in-alt"></i>
       </button>
-    </form>
+    </form> -->
 
     <div class="dropdown show" *ngIf="authService.isLogued()">
       <a class="dropdown-toggle menu-dropdown" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"

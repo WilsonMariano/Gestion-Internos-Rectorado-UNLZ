@@ -1,8 +1,7 @@
 <!-- Buscador -->
-<div class="row align-items-center text-center bg">
-    <div class="col-md-5 col-sm-12 offset-sm-4">
-      <!-- <h2 class="text-center mb-5">¿A quién querés llamar?</h2> -->
-      <div class="input-group">
+<div class="row text-center bg">
+    <div id="buscador" class="col-md-5 col-sm-12 offset-sm-4">
+            <div class="input-group">
         <input type="text" class="form-control" placeholder="Comience a escribir un nombre, apellido, oficina o piso..." [(ngModel)]="cadenaBuscar" (keyup)="onKeyPress()">
         <div class="input-group-prepend">
           <div class="input-group-text" id="btn-buscar">
@@ -27,11 +26,11 @@
 
 <!-- Tarjetas -->
 <div class="container">
-  <div class="row justify-content-center mt-3">
+  <div class="row justify-content-center mt-10">
 
-    <div class="col-12 text-right">
-        <span class="badge badge-primary mr-1">Paginado</span> <a href="#" (click)="cantPagPrincipal = 10">10</a>, <a href="#" (click)="cantPagPrincipal = 15">15</a>, <a href="#" (click)="cantPagPrincipal = 20">20</a>, <a href="#" (click)="cantPagPrincipal = 30">30</a>, <a href="#" (click)="cantPagPrincipal = 50">50</a>
-    </div>
+    <!-- <div class="col-12 text-right"> -->
+        <!-- <span class="badge badge-primary mr-1">Paginado</span> <a href="#" (click)="cantPagPrincipal = 10">10</a>, <a href="#" (click)="cantPagPrincipal = 15">15</a>, <a href="#" (click)="cantPagPrincipal = 20">20</a>, <a href="#" (click)="cantPagPrincipal = 30">30</a>, <a href="#" (click)="cantPagPrincipal = 50">50</a> -->
+    <!-- </div> -->
 
     <div class="col-12 text-center mt-5" *ngIf="arrInternos.length == 0">
       <i class="fas fa-spinner fa-spin fa-3x"></i>

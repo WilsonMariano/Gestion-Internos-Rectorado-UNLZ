@@ -1,12 +1,13 @@
 a{
-    color: #9d9d9d;
-    text-decoration:none; 
-    margin-right: 30px;
-}
+    color: #259afa;
+    text-decoration:#259afa; 
+    margin-right: 300px;
+    margin-top: 5px;
+    }
 
 a:hover
 {
-    color: #fff;
+    color: rgb(247, 7, 7);
 }
 
 .nav-link:hover{
@@ -16,4 +17,8 @@ a:hover
 .dropdown-item:hover
 {
     color: #000;
+}
+.nav-link{
+    color: rgb(249, 251, 252) !important;
+             
 }
