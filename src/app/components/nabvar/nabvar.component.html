@@ -22,12 +22,12 @@
           Edición</a>
       </li>
     </ul>
-    <!-- <form class="form-inline my-2 my-lg-0" *ngIf="!authService.isLogued()">
+    <form class="form-inline my-2 my-lg-0" *ngIf="!authService.isLogued()">
       <input class="form-control mr-sm-1" type="password" placeholder="Ingrese clave" name="password" [(ngModel)]="password">
       <button class="btn btn-success my-2 my-sm-0" (click)="ingresar()">
         <i class="fas fa-sign-in-alt"></i>
       </button>
-    </form> -->
+    </form>
 
     <div class="dropdown show" *ngIf="authService.isLogued()">
       <a class="dropdown-toggle menu-dropdown" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
